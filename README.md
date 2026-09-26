@@ -1,40 +1,43 @@
-# Directorio de Startups
+# 🧭 Directorio de Startups
 
 Un directorio curado de las mejores plataformas y listados de startups del mundo, con foco especial en Latinoamérica.
 
-🌐 **Live:** [paulsiccha.github.io/directorio-startups](https://paulsiccha.github.io/directorio-startups/)
+🌐 **Visita el sitio:** [paulsiccha.github.io/directorio-startups](https://paulsiccha.github.io/directorio-startups/)
 
-## 📋 Descripción
+## 🎯 Propósito
 
-Este proyecto es una landing page estática que recopila los mejores directorios de startups a nivel global. El objetivo es ser un punto único donde la gente encuentre recursos para descubrir startups, con especial atención al ecosistema latinoamericano.
+Este proyecto tiene como objetivo centralizar los mejores recursos para descubrir startups a nivel global, con especial atención al ecosistema latinoamericano. En lugar de tener que buscar en múltiples lugares, aquí encontrarás una selección curada de los directorios más confiables y útiles.
 
-## 🚀 Características
+## � Directorios Incluidos
 
-- **Diseño minimalista** estilo Hero UI
+El directorio incluye plataformas como:
+
+- **Startups regionales:** startups.pe, TopStartups.lat, Contxto, LatamList
+- **Plataformas globales:** Crunchbase, Product Hunt, Wellfound, F6S
+- **Inteligencia de mercado:** Tracxn, Dealroom.co, StartupBlink
+- **Aceleradoras:** Y Combinator Startup Directory, BetaList
+
+## 🚀 Tecnologías
+
+- **HTML5, CSS3, JavaScript** (vanilla, sin frameworks)
+- **Diseño responsive** con mobile-first approach
 - **Modo oscuro automático** según preferencia del sistema
-- **Totalmente responsive** (mobile-first)
-- **Sin dependencias** - HTML/CSS/JS puro
-- **Fácil de mantener** - Datos en array de JavaScript
-- **SEO optimizado** con meta tags para redes sociales
+- **Optimizado para SEO** con meta tags para redes sociales
 
-## 📁 Estructura del Proyecto
+## 🤝 Cómo Contribuir
 
-```
-directorio-startups/
-├── index.html          # Estructura HTML principal
-├── styles.css          # Estilos y diseño
-├── script.js           # Datos de directorios y lógica
-├── favicon.svg         # Favicon (emoji 🧭)
-└── README.md           # Este archivo
-```
+¡Las contribuciones son bienvenidas! Puedes ayudar de varias formas:
 
-## ➕ Cómo Agregar Nuevos Directorios
+### Sugerir nuevos directorios
 
-Para agregar un nuevo directorio al listado, sigue estos pasos:
+¿Conoces un directorio de startups que no está en esta lista?
 
-1. Abre el archivo `script.js`
-2. Busca el array `directories`
-3. Agrega un nuevo objeto con el siguiente formato:
+1. Crea un [issue](https://github.com/paulsiccha/directorio-startups/issues/new) con el nombre del directorio y su URL
+2. O envía un Pull Request agregándolo directamente al archivo `script.js`
+
+### Formato para agregar directorios
+
+En el archivo `script.js`, agrega un nuevo objeto al array `directories`:
 
 ```javascript
 {
@@ -44,99 +47,31 @@ Para agregar un nuevo directorio al listado, sigue estos pasos:
 }
 ```
 
-**Ejemplo:**
+### Reportar problemas
 
-```javascript
-{
-    name: "Startup Chile",
-    url: "https://startupchile.org",
-    description: "Programa de aceleración de startups en Chile con alcance global."
-}
-```
-
-4. Guarda el archivo y los cambios se reflejarán automáticamente en la página
+Si encuentras algún error o enlace roto, por favor repórtalo creando un [issue](https://github.com/paulsiccha/directorio-startups/issues/new).
 
 ## 🛠️ Desarrollo Local
 
-Para ver la página localmente:
-
-1. Clona el repositorio
-2. Abre `index.html` en tu navegador, o
-3. Usa un servidor local:
+Para ejecutar el proyecto localmente:
 
 ```bash
-# Con Python 3
-python -m http.server 8000
+# Clona el repositorio
+git clone https://github.com/paulsiccha/directorio-startups.git
+cd directorio-startups
 
-# Con Node.js (requiere http-server)
+# Opción 1: Abrir index.html directamente en tu navegador
+
+# Opción 2: Usar un servidor local con Python
+python3 -m http.server 8000
+
+# Opción 3: Usar un servidor local con Node.js
 npx http-server
 ```
 
-4. Abre `http://localhost:8000` en tu navegador
-
-## 📦 Deploy en GitHub Pages
-
-### Opción 1: Desde la rama principal (recomendado)
-
-1. Sube los archivos a tu repositorio en GitHub
-2. Ve a **Settings** > **Pages**
-3. En **Source**, selecciona:
-   - **Branch:** `main`
-   - **Folder:** `/ (root)`
-4. Haz clic en **Save**
-5. Tu sitio estará disponible en: `https://[tu-usuario].github.io/directorio-startups/`
-
-### Opción 2: Desde la carpeta /docs
-
-1. Mueve todos los archivos a una carpeta llamada `docs/`
-2. Sube los cambios a GitHub
-3. Ve a **Settings** > **Pages**
-4. En **Source**, selecciona:
-   - **Branch:** `main`
-   - **Folder:** `/docs`
-5. Haz clic en **Save**
-
-## 🎨 Personalización
-
-### Colores
-
-Los colores principales se definen en `styles.css` en las variables CSS:
-
-```css
-:root {
-    --accent-color: #2563EB;    /* Color de acento azul */
-    --bg-primary: #FAFAFA;      /* Fondo principal (light mode) */
-    --bg-card: #FFFFFF;         /* Fondo de tarjetas */
-    /* ... más variables */
-}
-```
-
-### Favicon
-
-El favicon actual usa el emoji 🧭. Para cambiarlo:
-
-1. Reemplaza `favicon.svg` con tu propio archivo SVG, o
-2. Actualiza el `<link>` en `index.html` para usar un PNG/ICO
-
-### Sponsor
-
-El bloque de sponsor está preparado como placeholder en el HTML. Para activarlo:
-
-1. Busca la sección `.sponsor-placeholder` en `index.html`
-2. Reemplaza el contenido con tu código de sponsor (imagen, link, etc.)
-3. Ajusta los estilos en `styles.css` bajo `.sponsor-box` si es necesario
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Puedes:
-
-1. **Reportar problemas** o sugerir nuevos directorios creando un [issue](https://github.com/paulsiccha/directorio-startups/issues/new)
-2. **Enviar un PR** directamente con tus cambios
-3. **Mejorar el diseño** o corregir errores
-
 ## 📄 Licencia
 
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+Este proyecto es de código abierto y está disponible bajo la licencia [MIT](LICENSE).
 
 ## 👨‍💻 Autor
 
@@ -144,4 +79,4 @@ Creado y curado por [Paul Siccha](https://github.com/paulsiccha)
 
 ---
 
-**¿Conoces un directorio de startups que no está en esta lista?** [Ábrelo como issue](https://github.com/paulsiccha/directorio-startups/issues/new) o envía un PR.
+**¿Conoces un directorio de startups que debería estar incluido?** [Abre un issue](https://github.com/paulsiccha/directorio-startups/issues/new) o envía un PR.
