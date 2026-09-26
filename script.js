@@ -91,6 +91,67 @@ function renderDirectories() {
     });
 }
 
+// Array de FAQs
+const faqs = [
+    {
+        question: "¿Qué es un directorio de startups?",
+        answer: "Un directorio de startups es una plataforma que lista y organiza startups, generalmente por industria, ubicación geográfica o etapa de desarrollo. Estos directorios ayudan a inversores, talentos y otros emprendedores a descubrir nuevas oportunidades de negocio."
+    },
+    {
+        question: "¿Por qué enfocarse en Latinoamérica?",
+        answer: "Latinoamérica es una de las regiones con mayor crecimiento en el ecosistema de startups. Países como Brasil, México, Colombia, Chile y Perú están experimentando un auge significativo en emprendimiento tecnológico, con cada vez más fondos de inversión y programas de aceleración."
+    },
+    {
+        question: "¿Cómo puedo usar estos directorios?",
+        answer: "Puedes usar estos directorios para descubrir startups relevantes para tu industria, investigar competencia, encontrar oportunidades de inversión, identificar tendencias del mercado, o incluso buscar empleo en startups innovadoras."
+    },
+    {
+        question: "¿Son gratuitos estos directorios?",
+        answer: "La mayoría de los directorios listados ofrecen acceso gratuito a su información básica. Algunos, como Crunchbase, tienen planes premium con datos más detallados y análisis avanzados. Otros como Product Hunt son completamente gratuitos."
+    },
+    {
+        question: "¿Cómo puedo agregar mi startup a estos directorios?",
+        answer: "Cada directorio tiene su propio proceso de registro. Generalmente puedes crear una cuenta y agregar tu perfil de startup. Algunos directorios requieren verificación o aprobación previa, especialmente los más especializados."
+    }
+];
+
+// Función para renderizar las FAQs
+function renderFAQs() {
+    const faqContainer = document.getElementById('faqContainer');
+    
+    faqs.forEach((faq, index) => {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'faq-item';
+        
+        faqItem.innerHTML = `
+            <div class="faq-question" onclick="toggleFAQ(${index})">
+                ${faq.question}
+            </div>
+            <div class="faq-answer">
+                ${faq.answer}
+            </div>
+        `;
+        
+        faqContainer.appendChild(faqItem);
+    });
+}
+
+// Función para toggle FAQ
+function toggleFAQ(index) {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const clickedItem = faqItems[index];
+    
+    // Cerrar otros FAQs abiertos
+    faqItems.forEach((item, i) => {
+        if (i !== index) {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Toggle el FAQ clickeado
+    clickedItem.classList.toggle('active');
+}
+
 // Función para actualizar el año actual en el footer
 function updateCurrentYear() {
     const yearSpan = document.getElementById('currentYear');
@@ -102,5 +163,6 @@ function updateCurrentYear() {
 // Inicializar cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
     renderDirectories();
+    renderFAQs();
     updateCurrentYear();
 });
